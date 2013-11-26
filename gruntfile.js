@@ -126,7 +126,11 @@ module.exports = function(grunt) {
             js: {
                 files: ['<%= concat.app.src %>', 'js/main.js'],
                 tasks: ['notify:app_change','app_change']                
-            }
+            },
+            /*sync: {
+                files: ['', 'templates/img/**'],
+                tasks: ['sync_files']                
+            }*/
         }
     });
     //- REGISTER ALL OUR GRUNT TASKS
@@ -137,4 +141,5 @@ module.exports = function(grunt) {
     grunt.registerTask('sass_change', ['sass']);
     grunt.registerTask('css_prefixed', ['autoprefixer']);
     grunt.registerTask('css_min', ['cssmin']);
+    //grunt.registerTask('sync_files', ['sync']);
 };
