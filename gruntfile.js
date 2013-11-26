@@ -84,30 +84,28 @@ module.exports = function(grunt) {
                 ext: '.min.css'
             },
         },
+        // Move images to theme that are used within templates (only needed in our CMS installs)
+        /*sync: {
+            main: {
+                files: [{
+                    cwd: 'templates/img'
+                    src: '**',
+                    dest: '',
+                }]
+            }
+        },*/
         //- Notify when task is complete
         notify: {
-            css_compile: {
-                options: {
-                    title: 'SASS',  // optional
-                    message: 'Compile was successful', //required
-                }
-            },
-            css_prefixed: {
-                options: {
-                    title: 'CSS AutoPrefixer',  // optional
-                    message: 'Prefix was successful', //required
-                }
-            },
             app_change: {
                 options: {
                     title: 'Javascript',  // optional
                     message: 'Concatenatated and minifed successfully', //required
                 }
             },
-            css_min: {
+            css_complete: {
                 options: {
-                    title: 'CSS Minified',  // optional
-                    message: 'Minifed successfully', //required
+                    title: 'SASS -> CSS',  // optional
+                    message: 'Compiled, prefixed, and moved successfully', //required
                 }
             },
         },
@@ -123,11 +121,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'css/*.css'],
-                tasks: ['notify:css_compile', 'css_prefixed', 'css_min']
-            },
-            prefix: {
-                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'templates/css/*.css'],
-                tasks: ['notify:css_min']
+                tasks: ['notify:css_complete', 'css_prefixed', 'css_min']
             },
             js: {
                 files: ['<%= concat.app.src %>', 'js/main.js'],
@@ -137,7 +131,7 @@ module.exports = function(grunt) {
     });
     //- REGISTER ALL OUR GRUNT TASKS
     grunt.task.run('notify_hooks');
-    grunt.registerTask('default', ['autoprefixer','sass','cssmin', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['autoprefixer','cssmin', 'concat','sass', /*'sync',*/ 'uglify', 'watch']);
     grunt.registerTask('app_change', ['concat:app', 'uglify:app', 'uglify:main']);
     grunt.registerTask('concat_change', ['uglify:app']);
     grunt.registerTask('sass_change', ['sass']);
