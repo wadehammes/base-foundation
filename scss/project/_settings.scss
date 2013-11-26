@@ -3,9 +3,9 @@
 //
 
 // Uncomment to use rem-calc() in your settings
-// @import "foundation/functions";
+@import "foundation/functions";
 
-// $experimental: true;
+$experimental: true;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with brower-based text zoom or user-set defaults.
@@ -19,7 +19,7 @@
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+$rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -30,9 +30,9 @@
 
 // $include-html-grid-classes: $include-html-classes;
 
-// $row-width: rem-calc(1000);
-// $column-gutter: rem-calc(30);
-// $total-columns: 12;
+$row-width: rem-calc(1024);
+$column-gutter: rem-calc(20);
+$total-columns: 12;
 
 // We use these to control various global styles
 // $body-bg: #fff;
@@ -42,7 +42,7 @@
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;

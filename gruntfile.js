@@ -29,19 +29,19 @@ module.exports = function(grunt) {
         uglify: {
             plugins : {
                 files: {
-                    'templates/js/plugins.min.js': ['<%= concat.plugins.dest %>']
+                    'public/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                     //'drupal/sites/all/themes/theme_name/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                 }
             },
             app : {
                 files: {
-                    'templates/js/app.min.js': ['<%= concat.app.dest %>']
+                    'public/js/app.min.js': ['<%= concat.app.dest %>']
                     //'drupal/sites/all/themes/theme_name/js/app.min.js': ['<%= concat.app.dest %>']
                 }
             },
             main : {
                 files: {
-                    'templates/js/main.min.js': ['js/main.js']
+                    'public/js/main.min.js': ['js/main.js']
                     //'drupal/sites/all/themes/theme_name/js/main.min.js': ['_js/main.js']
                 }
             }
@@ -53,12 +53,35 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    outputStyle: 'compressed'
+                    outputStyle: 'expanded'
                 },
                 files: {
-                    'templates/css/app.css': 'scss/app.scss'
+                    'css/app-unprefixed.css': 'scss/app.scss'
                 }        
             }
+        },
+        // Prefix the CSS
+        autoprefixer: {
+            options: {
+                browsers: ["last 2 versions", "> 1%", "ie 8", "ie 7"]
+            },
+            your_target: {
+                options: {
+                    flatten: true
+                },
+                src: 'css/app-unprefixed.css',
+                dest: 'public/css/app.css'
+            },
+        },
+        // Minify CSS
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'public/css/',
+                src: ['*.css', '!*.min.css'],
+                dest: 'public/css/',
+                ext: '.min.css'
+            },
         },
         //- Notify when task is complete
         notify: {
@@ -68,23 +91,42 @@ module.exports = function(grunt) {
                     message: 'Compile was successful', //required
                 }
             },
+            css_prefixed: {
+                options: {
+                    title: 'CSS AutoPrefixer',  // optional
+                    message: 'Prefix was successful', //required
+                }
+            },
             app_change: {
                 options: {
                     title: 'Javascript',  // optional
-                    message: 'Concatenated and minifed successfully', //required
+                    message: 'Concatenatated and minifed successfully', //required
                 }
-            }
+            },
+            css_min: {
+                options: {
+                    title: 'CSS Minified',  // optional
+                    message: 'Minifed successfully', //required
+                }
+            },
         },
         //- Watchers
         watch: {
-            grunt: { files: ['gruntfile.js'] },
-            css: {
-                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'templates/css/*.css'],
-                tasks: ['notify:css_compile']
+            grunt: { 
+                files: ['gruntfile.js'],
+                tasks: ['default'] 
             },
             sass: {
                 files: ['scss/{,*/}*.scss'],
                 tasks: ['sass_change']
+            },
+            css: {
+                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'css/*.css'],
+                tasks: ['notify:css_compile', 'css_prefixed']
+            },
+            prefix: {
+                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'public/css/*.css'],
+                tasks: ['notify:css_min']
             },
             js: {
                 files: ['<%= concat.app.src %>', 'js/main.js'],
@@ -94,8 +136,10 @@ module.exports = function(grunt) {
     });
     //- REGISTER ALL OUR GRUNT TASKS
     grunt.task.run('notify_hooks');
-    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['autoprefixer','sass','cssmin', 'concat', 'uglify', 'watch']);
     grunt.registerTask('app_change', ['concat:app', 'uglify:app', 'uglify:main']);
     grunt.registerTask('concat_change', ['uglify:app']);
     grunt.registerTask('sass_change', ['sass']);
+    grunt.registerTask('css_prefixed', ['autoprefixer']);
+    grunt.registerTask('css_min', ['cssmin']);
 };

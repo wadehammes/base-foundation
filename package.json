@@ -10,7 +10,8 @@
 		"grunt-contrib-concat":        "*",
 		"grunt-sass":                  "*",
 		"grunt-notify":                "*",
-		"grunt-cssc":                  "*",
+		"grunt-autoprefixer":          "*",
+		"grunt-contrib-cssmin":        "*",
 		"matchdep":                    "*"
 	}
 }
