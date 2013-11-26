@@ -29,19 +29,19 @@ module.exports = function(grunt) {
         uglify: {
             plugins : {
                 files: {
-                    'public/js/plugins.min.js': ['<%= concat.plugins.dest %>']
+                    'templates/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                     //'drupal/sites/all/themes/theme_name/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                 }
             },
             app : {
                 files: {
-                    'public/js/app.min.js': ['<%= concat.app.dest %>']
+                    'templates/js/app.min.js': ['<%= concat.app.dest %>']
                     //'drupal/sites/all/themes/theme_name/js/app.min.js': ['<%= concat.app.dest %>']
                 }
             },
             main : {
                 files: {
-                    'public/js/main.min.js': ['js/main.js']
+                    'templates/js/main.min.js': ['js/main.js']
                     //'drupal/sites/all/themes/theme_name/js/main.min.js': ['_js/main.js']
                 }
             }
@@ -56,7 +56,8 @@ module.exports = function(grunt) {
                     outputStyle: 'expanded'
                 },
                 files: {
-                    'css/app-unprefixed.css': 'scss/app.scss'
+                    'css/app-unprefixed.css': 'scss/app.scss',
+                    'css/ie.css': 'scss/ie.scss'
                 }        
             }
         },
@@ -70,16 +71,16 @@ module.exports = function(grunt) {
                     flatten: true
                 },
                 src: 'css/app-unprefixed.css',
-                dest: 'public/css/app.css'
+                dest: 'templates/css/app.css'
             },
         },
         // Minify CSS
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'public/css/',
+                cwd: 'templates/css/',
                 src: ['*.css', '!*.min.css'],
-                dest: 'public/css/',
+                dest: 'templates/css/',
                 ext: '.min.css'
             },
         },
@@ -125,7 +126,7 @@ module.exports = function(grunt) {
                 tasks: ['notify:css_compile', 'css_prefixed', 'css_min']
             },
             prefix: {
-                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'public/css/*.css'],
+                files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'templates/css/*.css'],
                 tasks: ['notify:css_min']
             },
             js: {
