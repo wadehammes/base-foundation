@@ -77,6 +77,7 @@ module.exports = function(grunt) {
         },
         //- Watchers
         watch: {
+            grunt: { files: ['gruntfile.js'] },
             css: {
                 files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'templates/css/*.css'],
                 tasks: ['notify:css_compile']
