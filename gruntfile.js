@@ -14,13 +14,13 @@ module.exports = function(grunt) {
         concat: {
             plugins : {
                 src: [
-                    'js/_lib/{,*/}*.js'
+                    'js/_lib/**/*.js'
                 ],
                 dest: 'js/_lib.concat.js'
             },
             app : {
                 src: [
-                    'js/_src/{,*/}*.js'
+                    'js/_src/**/*.js'
                 ],
                 dest: 'js/_app.concat.js'
             },
@@ -114,15 +114,15 @@ module.exports = function(grunt) {
         watch: {
             grunt: { 
                 files: ['gruntfile.js'],
-                tasks: ['default'] 
+                tasks: ['default'], 
             },
             sass: {
-                files: ['scss/{,*/}*.scss'],
+                files: ['scss/**/*.scss'],
                 tasks: ['sass_change']
             },
             css: {
                 files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'css/*.css'],
-                tasks: ['notify:css_compile', 'css_prefixed']
+                tasks: ['notify:css_compile', 'css_prefixed', 'css_min']
             },
             prefix: {
                 files: [/*'drupal/sites/all/themes/theme_name/css/*.css',*/ 'public/css/*.css'],

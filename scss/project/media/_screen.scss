@@ -16,4 +16,7 @@ body {
 
 div#main {
     box-shadow: 1px 1px 1px $black;
+    display: flex;
+    border-radius: 2px;
+    column-count: 3;
 }
