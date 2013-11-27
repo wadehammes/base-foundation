@@ -4,16 +4,12 @@
 <?php include('public/inc/doctype.php'); ?>
 
         	<div id="main" role="main-content">
-
         		<div class="row">
-
         			<div class="small-12 columns">
         				<h1>Base Foundation</h1>
         				<p>Go build something awesome.</p>
         			</div>
-
         		</div><?php // end row ?>
-
         	</div><?php // end main-content ?>
 
 <?php include('public/inc/footer.php'); ?>
