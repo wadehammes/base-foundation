@@ -7,8 +7,8 @@
 
         		<div class="row">
 
-        			<div class="sixteen columns">
-        				<h1>Base <i class="icon-code"></i></h1>
+        			<div class="small-12 columns">
+        				<h1>Base Foundation</h1>
         				<p>Go build something awesome.</p>
         			</div>
 

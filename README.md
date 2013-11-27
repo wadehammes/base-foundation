@@ -38,6 +38,8 @@ Start building something awesome.
 - Use scss/project/media/screen.scss for screen styles
 - Use scss/project/media/print.scss for print styles
 
+The <code>templates/</code> directory is meant to be your www root here. Do your JS work in <code>js</code> and all your styling within <code>scss</code>. Grunt will handle the rest to ensure your templates have the necessary files.
+
 ####RELEASE LOG:
 <a href="https://github.com/wadehammes/Base/releases">https://github.com/wadehammes/Base/releases</a>
 
