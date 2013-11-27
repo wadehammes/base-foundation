@@ -1,6 +1,6 @@
-Base
+Base Foundation
 ======
-Base Foundation is a template framework based on the <a href="http://foundation.zurb.com">Foundation</a>, which utilizes <a href="http://sass-lang.com">SASS</a>, and is meant to be a starting point for a website build. It utilizes <a href="http://gruntjs.com/">Grunt</a>, which handles tasks such as CSS minification and prefixing, SASS compilation, and JS concatenation and uglifying.
+Base Foundation is a template framework based on the <a href="http://foundation.zurb.com">Foundation</a> framework from Zurb, which utilizes <a href="http://sass-lang.com">SASS</a>, and is meant to be a starting point for a website build. It utilizes <a href="http://gruntjs.com/">Grunt</a>, which handles javascript tasks such as CSS minification and prefixing, SASS compilation, and JS concatenation and uglifying, folder syncing, and more.
 
 ####PRIOR TO USAGE:
 You will need to make sure you have the following installed to your machine (via Terminal):
