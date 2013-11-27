@@ -1,7 +1,7 @@
 <?php $page = 'index'; // Page specific class for styling ?>
 <?php $pageClasses = array('global'); // Other page specific classes ?>
 
-<?php include('public/inc/doctype.php'); ?>
+<?php include('inc/doctype.php'); ?>
 
         	<div id="main" role="main-content">
         		<div class="row">
@@ -12,6 +12,6 @@
         		</div><?php // end row ?>
         	</div><?php // end main-content ?>
 
-<?php include('public/inc/footer.php'); ?>
+<?php include('inc/footer.php'); ?>
 
 		
