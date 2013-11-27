@@ -1,4 +1,4 @@
-Base
+Base Foundation
 ======
 Base Foundation is a template framework based on the <a href="http://foundation.zurb.com">Foundation</a> framework from Zurb, which utilizes <a href="http://sass-lang.com">SASS</a>, and is meant to be a starting point for a website build. It utilizes <a href="http://gruntjs.com/">Grunt</a>, which handles javascript tasks such as CSS minification and prefixing, SASS compilation, and JS concatenation and uglifying, folder syncing, and more.
 
@@ -37,9 +37,3 @@ Start building something awesome.
 - Use scss/project/global for creating style guide classes and other reusuable, global elements.
 - Use scss/project/media/screen.scss for screen styles
 - Use scss/project/media/print.scss for print styles
-
-####RELEASE LOG:
-<a href="https://github.com/wadehammes/Base/releases">https://github.com/wadehammes/Base/releases</a>
-
-####CONTRIBUTORS:
-Special thanks to <a href="http://ca.linkedin.com/pub/simon-sarrasin/7/5b8/b0b">Simon Sarrasin</a> for the Javascript architecture
