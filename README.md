@@ -16,6 +16,7 @@ Then Bower:
 
 After that, install some other dependencies:
 <code>$ sudo gem install -g sass</code>
+<code>$ sudo gem install -g bourbon</code>
 
 Once you are ready to compile the project, download these files as a zip, decompress, and move them to your project directory. Then, in terminal:
 <code>$ cd your/project/directory</code>
@@ -29,6 +30,10 @@ Install the Bower dependencies into the project:
 Initiate Grunt:
 <code>$ grunt</code>
 
+In order to update Bower and Bourbon:
+<code>$ bourbon update</code>
+<code>$ bower update</code>
+
 Your project should compile, and you will recieve notifications of things changing.
 
 Start building something awesome.
@@ -38,10 +43,15 @@ Start building something awesome.
 - Use scss/project/media/screen.scss for screen styles
 - Use scss/project/media/print.scss for print styles
 
-The <code>templates/</code> directory is meant to be your www root here. Do your JS work in <code>js</code> and all your styling within <code>scss</code>. Grunt will handle the rest to ensure your templates have the necessary files.
+For development:
+Do your JS work in <code>js/</code> and all your styling within <code>scss/</code>. The <code>templates/</code> directory is meant to be your static build folder for HTML, and will serve as your webroot.
 
-####RELEASE LOG:
-<a href="https://github.com/wadehammes/Base/releases">https://github.com/wadehammes/Base/releases</a>
+####CREDITS:
+Foundation - http://foundation.zurb.com
 
-####CONTRIBUTORS:
-Special thanks to <a href="http://ca.linkedin.com/pub/simon-sarrasin/7/5b8/b0b">Simon Sarrasin</a> for the Javascript architecture
+Grunt - http://gruntjs.com
+
+Bones Theme - https://github.com/eddiemachado/bones
+
+Bourbon - http://bourbon.io
+
