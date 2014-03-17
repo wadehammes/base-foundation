@@ -6,15 +6,7 @@ html * {
 }
 
 body {
-    -webkit-backface-visibility:(hidden); // Fixes Chrome 1px shift rendering issue on CSS3 transitions.
-}
-
-html, body {
-    height: 100%;
-}
-
-.fixed {
-    position: fixed;
+    @include backface-visibility(visible);
 }
 
 // Tools
@@ -31,9 +23,4 @@ html, body {
 
 .clearfix {
     *zoom: 1;
-}
-
-//- CLEARFIX FALLBACK - Use: <div class="clear"></div> after floated elements if clearfix class fails
-.clear {
-    clear: both;
 }

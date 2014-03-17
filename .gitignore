@@ -1,11 +1,15 @@
-.DS_Store
-.DS_Store?
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.sass-cache
-*.sublime-*
-node_modules
-bower_components
-public/css
-css
+/* IGNORE BOWER AND NODES */
+bower_components/
+node_modules/
+bourbon/
+
+/* ALL JS */
+templates/js/app.min.js
+templates/js/main.min.js
+templates/js/plugins.min.js
+
+/* ALL CSS */
+templates/css/app.css
+templates/css/app.min.css
+templates/css/ie.css
+templates/css/ie.min.css

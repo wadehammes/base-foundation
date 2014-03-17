@@ -20,7 +20,7 @@ module.exports = function(grunt) {
             },
             app : {
                 src: [
-                    'js/_src/**/*.js'
+                    'js/_src/**/*.js','bower_components/foundation/js/foundation.min.js'
                 ],
                 dest: 'js/_app.concat.js'
             },
