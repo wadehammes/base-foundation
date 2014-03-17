@@ -14,35 +14,41 @@ module.exports = function(grunt) {
         concat: {
             plugins : {
                 src: [
-                    'js/_lib/**/*.js'
+                    'js/_lib/**/*.js',
+                    'bowers_components/foundation/js/foundation.js'
                 ],
-                dest: 'js/_lib.concat.js'
+                dest : 'js/_lib.concat.js'
             },
             app : {
                 src: [
-                    'js/_src/**/*.js','bower_components/foundation/js/foundation.min.js'
+                    'js/_src/**/*.js',
+                    'js/_src/**/**/*.js'
+                    //'bower_components/foundation/js/foundation.min.js',
+                    //'bower_components/60fps-scroll/dist/60fps-scroll.js'
                 ],
-                dest: 'js/_app.concat.js'
-            },
+                dest : 'js/_app.concat.js'
+            }
         },
         //- Uglify concatenated and other JS files
         uglify: {
             plugins : {
                 files: {
                     'templates/js/plugins.min.js': ['<%= concat.plugins.dest %>']
-                    //'drupal/sites/all/themes/theme_name/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                 }
             },
             app : {
                 files: {
                     'templates/js/app.min.js': ['<%= concat.app.dest %>']
-                    //'drupal/sites/all/themes/theme_name/js/app.min.js': ['<%= concat.app.dest %>']
                 }
             },
             main : {
                 files: {
                     'templates/js/main.min.js': ['js/main.js']
-                    //'drupal/sites/all/themes/theme_name/js/main.min.js': ['_js/main.js']
+                }
+            },
+            base : {
+                files: {
+                    'templates/js/base.min.js': ['js/base.js']
                 }
             }
         },
