@@ -13,3 +13,6 @@ templates/css/app.css
 templates/css/app.min.css
 templates/css/ie.css
 templates/css/ie.min.css
+
+/* ALL OTHER */
+.DS_Store
