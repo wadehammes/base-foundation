@@ -90,16 +90,6 @@ module.exports = function(grunt) {
                 ext: '.min.css'
             },
         },
-        // Move images to theme that are used within templates (only needed in our CMS installs)
-        /*sync: {
-            main: {
-                files: [{
-                    cwd: 'templates/img'
-                    src: '**',
-                    dest: '',
-                }]
-            }
-        },*/
         //- Notify when task is complete
         notify: {
             app_change: {
