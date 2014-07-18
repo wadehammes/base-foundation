@@ -24,26 +24,22 @@
 		<meta property="og:description" content="Base Template" />
 
 		<!-- STYLE -->
-		<link href="templates/css/app.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="css/app.min.css" media="all" rel="stylesheet" type="text/css" />
 		<!--[if lt IE 9]>
 			<link href="templates/css/ie.min.css" media="all" rel="stylesheet" type="text/css" />
 		<![endif]-->
 
 			    <!-- SCRIPT -->
-	    <script type="text/javascript">window._root = '/';</script>
+		<script type="text/javascript">window._root = '/';</script>
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	    <!-- <script type="text/javascript" src="/wp-includes/js/jquery/jquery.js"></script> -->
 	    <script type="text/javascript" src="js/vendor/modernizr.min.js?<?php echo rand(0,10000000);?>"></script>
-	    <script type="text/javascript" src="js/base.min.js?<?php echo rand(0,10000000);?>"></script>
-	    <script type="text/javascript" src="js/plugins.min.js?<?php echo rand(0,10000000);?>"></script>
-	    <script type="text/javascript" src="js/app.min.js?<?php echo rand(0,10000000);?>"></script>
-	    <script type="text/javascript" src="js/main.min.js?<?php echo rand(0,10000000);?>"></script>
 	    <script type="text/javascript" src="js/vendor/html5shiv.js?<?php echo rand(0,10000000);?>"></script>
 
 	</head>
 	<body id="<?php print $page; ?>" class="<?php echo implode(' ', $pageClasses); ?>">
 
-<?php include('templates/inc/header.php'); ?>
+<?php include('inc/header.php'); ?>
 
 		<div id="content-wrapper">
 

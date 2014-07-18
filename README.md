@@ -12,7 +12,7 @@ Then Grunt:
 <a href="http://gruntjs.com/getting-started">http://gruntjs.com/getting-started</a>
 
 Then Bower:
-<code>$ sudo gem install -g bower</code>
+<code>$ npm install -g bower</code>
 
 After that, install some other dependencies:
 <code>$ sudo gem install -g sass</code>
@@ -50,8 +50,6 @@ Do your JS work in <code>js/</code> and all your styling within <code>scss/</cod
 Foundation - http://foundation.zurb.com
 
 Grunt - http://gruntjs.com
-
-Bones Theme - https://github.com/eddiemachado/bones
 
 Bourbon - http://bourbon.io
 

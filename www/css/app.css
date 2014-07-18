@@ -1,4 +1,15 @@
-/* Use this file to write IE specific override styles. */
+/*!
+* Base Template v1.1 - September 12, 2013
+* ---------------------------
+*
+* Copyright Wade Hammes 2013
+* Gumby Framework - http://www.gumbyframework.com/
+*
+* ---------------------------
+* Screen Styles
+*
+*
+*/
 meta.foundation-version {
   font-family: "/5.3.1/"; }
 
@@ -30,7 +41,6 @@ html, body {
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body {
@@ -885,7 +895,8 @@ select {
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  transition: opacity 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out;
+          transition: opacity 300ms ease-out;
   background-color: #008CBA;
   border-color: #007ba0;
   color: #fff; }
@@ -1271,7 +1282,8 @@ button, .button {
   background-color: #008CBA;
   border-color: #007295;
   color: #fff;
-  transition: background-color 300ms ease-out; }
+  -webkit-transition: background-color 300ms ease-out;
+          transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #007295; }
   button:hover, button:focus, .button:hover, .button:focus {
@@ -1338,7 +1350,8 @@ button, .button {
     color: #fff;
     cursor: default;
     opacity: 0.7;
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
       background-color: #007295; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
@@ -1351,7 +1364,8 @@ button, .button {
       color: #333;
       cursor: default;
       opacity: 0.7;
-      box-shadow: none; }
+      -webkit-box-shadow: none;
+              box-shadow: none; }
       button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
         background-color: #007295; }
       button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
@@ -1364,7 +1378,8 @@ button, .button {
       color: #fff;
       cursor: default;
       opacity: 0.7;
-      box-shadow: none; }
+      -webkit-box-shadow: none;
+              box-shadow: none; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         background-color: #007295; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
@@ -1377,7 +1392,8 @@ button, .button {
       color: #fff;
       cursor: default;
       opacity: 0.7;
-      box-shadow: none; }
+      -webkit-box-shadow: none;
+              box-shadow: none; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
         background-color: #007295; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
@@ -1655,7 +1671,8 @@ button::-moz-focus-inner {
           max-width: none; }
         .clearing-assembled .clearing-container .carousel > ul li a.th {
           border: none;
-          box-shadow: none;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
           display: block; }
         .clearing-assembled .clearing-container .carousel > ul li img {
           cursor: pointer !important;
@@ -2085,7 +2102,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   background-color: #fff;
   font-family: inherit;
   border: 1px solid #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
@@ -2094,11 +2112,12 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   height: 2.3125rem;
   width: 100%;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+  -webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+          transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-    box-shadow: 0 0 5px #999999;
+    -webkit-box-shadow: 0 0 5px #999999;
+            box-shadow: 0 0 5px #999999;
     border-color: #999999; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
     background: #fafafa;
@@ -2427,7 +2446,8 @@ label.error {
   position: absolute;
   border-radius: 3px;
   z-index: 102;
-  box-shadow: 0 0 15px #ffffff; }
+  -webkit-box-shadow: 0 0 15px #ffffff;
+          box-shadow: 0 0 15px #ffffff; }
 
 .joyride-expose-cover {
   background: transparent;
@@ -2527,26 +2547,14 @@ label.error {
   to {
     -webkit-transform: rotate(360deg); } }
 
-@-moz-keyframes rotate {
-  from {
-    -moz-transform: rotate(0deg); }
-
-  to {
-    -moz-transform: rotate(360deg); } }
-
-@-o-keyframes rotate {
-  from {
-    -o-transform: rotate(0deg); }
-
-  to {
-    -o-transform: rotate(360deg); } }
-
 @keyframes rotate {
   from {
-    transform: rotate(0deg); }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
 
   to {
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 /* Orbit Graceful Loading */
 .slideshow-wrapper {
@@ -2578,10 +2586,14 @@ label.error {
     border: solid 3px;
     border-color: #555 #fff;
     border-radius: 1000px;
-    animation-name: rotate;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; }
+    -webkit-animation-name: rotate;
+            animation-name: rotate;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
 
 .orbit-container {
   overflow: hidden;
@@ -2771,7 +2783,8 @@ ul.pagination {
       font-weight: normal;
       font-size: 1em;
       line-height: inherit;
-      transition: background-color 300ms ease-out; }
+      -webkit-transition: background-color 300ms ease-out;
+              transition: background-color 300ms ease-out; }
     ul.pagination li:hover a, ul.pagination li a:focus, ul.pagination li:hover button, ul.pagination li button:focus {
       background: #e6e6e6; }
     ul.pagination li.unavailable a, ul.pagination li.unavailable button {
@@ -3016,7 +3029,8 @@ dialog, .reveal-modal {
   background-color: #fff;
   padding: 1.25rem;
   border: solid 1px #666;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
   @media only screen and (max-width: 40em) {
     dialog, .reveal-modal {
       min-height: 100vh; } }
@@ -3251,7 +3265,8 @@ div.switch label {
   width: 4rem;
   height: 2rem;
   cursor: pointer;
-  transition: left 0.15s ease-out; }
+  -webkit-transition: left 0.15s ease-out;
+          transition: left 0.15s ease-out; }
 div.switch input {
   display: none; }
   div.switch input + label {
@@ -3267,7 +3282,6 @@ div.switch label:after {
   width: 1.5rem;
   height: 1.5rem;
   -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out; }
 div.switch input:checked + label {
   background: #008CBA; }
@@ -3698,7 +3712,8 @@ blockquote, blockquote p {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important; }
   a, a:visited {
     text-decoration: underline; }
@@ -3812,10 +3827,13 @@ blockquote, blockquote p {
   display: inline-block;
   border: solid 4px #fff;
   max-width: 100%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-  transition: all 200ms ease-out; }
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 200ms ease-out;
+          transition: all 200ms ease-out; }
   .th:hover, .th:focus {
-    box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5); }
+    -webkit-box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
+            box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5); }
   .th.radius {
     border-radius: 3px; }
 
@@ -3997,10 +4015,12 @@ meta.foundation-mq-topbar {
           top: 50%;
           margin-top: -8px;
           right: 15px;
-          box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
+          -webkit-box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
+                  box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
           width: 16px; }
         .top-bar .toggle-topbar.menu-icon a span:hover:after {
-          box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff; }
+          -webkit-box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
+                  box-shadow: 0 0px 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff; }
   .top-bar.expanded {
     height: auto;
     background: transparent; }
@@ -4009,13 +4029,15 @@ meta.foundation-mq-topbar {
     .top-bar.expanded .toggle-topbar a {
       color: #888; }
       .top-bar.expanded .toggle-topbar a::after {
-        box-shadow: 0 10px 0 1px #888, 0 16px 0 1px #888, 0 22px 0 1px #888; }
+        -webkit-box-shadow: 0 10px 0 1px #888, 0 16px 0 1px #888, 0 22px 0 1px #888;
+                box-shadow: 0 10px 0 1px #888, 0 16px 0 1px #888, 0 22px 0 1px #888; }
 
 .top-bar-section {
   left: 0;
   position: relative;
   width: auto;
-  transition: left 300ms ease-out; }
+  -webkit-transition: left 300ms ease-out;
+          transition: left 300ms ease-out; }
   .top-bar-section ul {
     padding: 0;
     width: 100%;
@@ -4218,7 +4240,8 @@ meta.foundation-mq-topbar {
     margin: 0 auto;
     margin-bottom: 0; }
   .top-bar-section {
-    transition: none 0 0;
+    -webkit-transition: none 0 0;
+            transition: none 0 0;
     left: 0 !important; }
     .top-bar-section ul {
       width: auto;
@@ -4357,9 +4380,6 @@ meta.foundation-mq-topbar {
   position: relative;
   width: 100%;
   -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
   transition: transform 500ms ease; }
   .inner-wrap:before, .inner-wrap:after {
     content: " ";
@@ -4425,7 +4445,8 @@ meta.foundation-mq-topbar {
   padding: 0;
   color: #FFF;
   position: relative;
-  transform: translate3d(0, 0, 0); }
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
   .tab-bar .menu-icon span::after {
     content: "";
     position: absolute;
@@ -4434,10 +4455,12 @@ meta.foundation-mq-topbar {
     top: 50%;
     margin-top: -0.5rem;
     left: 0.90625rem;
-    box-shadow: 0 0px 0 1px #FFF, 0 7px 0 1px #FFF, 0 14px 0 1px #FFF;
+    -webkit-box-shadow: 0 0px 0 1px #FFF, 0 7px 0 1px #FFF, 0 14px 0 1px #FFF;
+            box-shadow: 0 0px 0 1px #FFF, 0 7px 0 1px #FFF, 0 14px 0 1px #FFF;
     width: 1rem; }
   .tab-bar .menu-icon span:hover:after {
-    box-shadow: 0 0px 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3; }
+    -webkit-box-shadow: 0 0px 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3;
+            box-shadow: 0 0px 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3; }
 
 .left-off-canvas-menu {
   -webkit-backface-visibility: hidden;
@@ -4448,14 +4471,14 @@ meta.foundation-mq-topbar {
   overflow-y: auto;
   background: #333;
   z-index: 1001;
-  box-sizing: content-box;
-  transition: transform 500ms ease 0s;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
+          transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(-100%, 0);
   -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   left: 0; }
   .left-off-canvas-menu * {
@@ -4470,14 +4493,14 @@ meta.foundation-mq-topbar {
   overflow-y: auto;
   background: #333;
   z-index: 1001;
-  box-sizing: content-box;
-  transition: transform 500ms ease 0s;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
+          transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(100%, 0);
   -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   right: 0; }
   .right-off-canvas-menu * {
@@ -4503,22 +4526,23 @@ ul.off-canvas-list {
     padding: 0.6666666667rem;
     color: rgba(255, 255, 255, 0.7);
     border-bottom: 1px solid #262626;
-    transition: background 300ms ease; }
+    -webkit-transition: background 300ms ease;
+            transition: background 300ms ease; }
     ul.off-canvas-list li a:hover {
       background: #242424; }
 
 .move-right > .inner-wrap {
   -ms-transform: translate(15.625rem, 0);
   -webkit-transform: translate3d(15.625rem, 0, 0);
-  -moz-transform: translate3d(15.625rem, 0, 0);
   -ms-transform: translate3d(15.625rem, 0, 0);
-  -o-transform: translate3d(15.625rem, 0, 0);
   transform: translate3d(15.625rem, 0, 0); }
 .move-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -4535,15 +4559,15 @@ ul.off-canvas-list {
 .move-left > .inner-wrap {
   -ms-transform: translate(-15.625rem, 0);
   -webkit-transform: translate3d(-15.625rem, 0, 0);
-  -moz-transform: translate3d(-15.625rem, 0, 0);
   -ms-transform: translate3d(-15.625rem, 0, 0);
-  -o-transform: translate3d(-15.625rem, 0, 0);
   transform: translate3d(-15.625rem, 0, 0); }
 .move-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -4560,15 +4584,15 @@ ul.off-canvas-list {
 .offcanvas-overlap .left-off-canvas-menu, .offcanvas-overlap .right-off-canvas-menu {
   -ms-transform: none;
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   transform: none;
   z-index: 1003; }
 .offcanvas-overlap .exit-offcanvas-menu {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -4877,7 +4901,8 @@ body {
   color: #000000; }
 
 html * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none; }
 
@@ -4894,3 +4919,92 @@ body {
 
 .clearfix {
   *zoom: 1; }
+
+html, body {
+  background: #FFFFFF; }
+
+body {
+  background: #FFFFFF; }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) { }
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) { }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) { }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) { }
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { }
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) { }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) { }
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) { }
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { }
+
+@media print {
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  /* Don't show links for images, or javascript/internal links */
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  @page {
+    margin: 0.5cm; }
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
+    -ms-filter: none !important; }
+  body {
+    width: 100%; }
+  p a {
+    color: #222 !important;
+    text-decoration: underline; }
+    p a:visited {
+      color: #222 !important;
+      text-decoration: underline; }
+    p a[href]:after {
+      content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  .ir a:after {
+    content: ""; }
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr, img {
+    page-break-inside: avoid; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  h2, h3 {
+    page-break-after: avoid; } }
+
+/*******************************************************************
+* If it’s a hack, it goes in shame.css.
+*
+* Document all hacks fully:
+* What part of the codebase does it relate to?
+* Why was this needed?
+* How does this fix it?
+* How might you fix it properly, given more time?
+* Do not blame the developer; if they explained why they had to do it then their reasons are probably (hopefully) valid.
+* Try and clean shame.css up when you have some down time.
+* Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
+**********************************************************************/

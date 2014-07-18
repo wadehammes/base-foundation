@@ -33,22 +33,22 @@ module.exports = function(grunt) {
         uglify: {
             plugins : {
                 files: {
-                    'templates/js/plugins.min.js': ['<%= concat.plugins.dest %>']
+                    'www/js/plugins.min.js': ['<%= concat.plugins.dest %>']
                 }
             },
             app : {
                 files: {
-                    'templates/js/app.min.js': ['<%= concat.app.dest %>']
+                    'www/js/app.min.js': ['<%= concat.app.dest %>']
                 }
             },
             main : {
                 files: {
-                    'templates/js/main.min.js': ['js/main.js']
+                    'www/js/main.min.js': ['js/main.js']
                 }
             },
             base : {
                 files: {
-                    'templates/js/base.min.js': ['js/base.js']
+                    'www/js/base.min.js': ['js/base.js']
                 }
             }
         },
@@ -77,16 +77,16 @@ module.exports = function(grunt) {
                     flatten: true
                 },
                 src: 'css/app-unprefixed.css',
-                dest: 'templates/css/app.css'
+                dest: 'www/css/app.css'
             },
         },
         // Minify CSS
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'templates/css/',
+                cwd: 'www/css/',
                 src: ['*.css', '!*.min.css'],
-                dest: 'templates/css/',
+                dest: 'www/css/',
                 ext: '.min.css'
             },
         },
