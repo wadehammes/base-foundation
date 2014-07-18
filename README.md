@@ -44,7 +44,7 @@ Start building something awesome.
 - Use scss/project/media/print.scss for print styles
 
 For development:
-Do your JS work in <code>js/</code> and all your styling within <code>scss/</code>. The <code>templates/</code> directory is meant to be your static build folder for HTML, and will serve as your webroot.
+Do your JS work in <code>js/</code> and all your styling within <code>scss/</code>. The <code>www/</code> directory is meant to be your static build folder for HTML, and will serve as your webroot.
 
 ####CREDITS:
 Foundation - http://foundation.zurb.com
