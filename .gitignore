@@ -4,15 +4,14 @@ node_modules/
 bourbon/
 
 /* ALL JS */
-templates/js/app.min.js
-templates/js/main.min.js
-templates/js/plugins.min.js
+www/js/*.js
+www/js/
 
 /* ALL CSS */
-templates/css/app.css
-templates/css/app.min.css
-templates/css/ie.css
-templates/css/ie.min.css
+www/css/*.css
+www/css/
+css/*.css
+css/
 
 /* ALL OTHER */
 .DS_Store

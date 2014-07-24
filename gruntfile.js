@@ -14,17 +14,13 @@ module.exports = function(grunt) {
         concat: {
             plugins : {
                 src: [
-                    'js/_lib/**/*.js',
-                    'bowers_components/foundation/js/foundation.js'
+                    'js/_lib/**/*.js'
                 ],
                 dest : 'js/_lib.concat.js'
             },
             app : {
                 src: [
-                    'js/_src/**/*.js',
-                    'js/_src/**/**/*.js'
-                    //'bower_components/foundation/js/foundation.min.js',
-                    //'bower_components/60fps-scroll/dist/60fps-scroll.js'
+                    'js/_src/**/*.js'
                 ],
                 dest : 'js/_app.concat.js'
             }
@@ -54,9 +50,6 @@ module.exports = function(grunt) {
         },
         //- Compile SASS
         sass: {
-            options: {
-                includePaths: ['bower_components/foundation/scss']
-            },
             dist: {
                 options: {
                     outputStyle: 'expanded'
@@ -64,7 +57,7 @@ module.exports = function(grunt) {
                 files: {
                     'css/app-unprefixed.css': 'scss/app.scss',
                     'css/ie.css': 'scss/ie.scss'
-                }        
+                }
             }
         },
         // Prefix the CSS
@@ -95,21 +88,30 @@ module.exports = function(grunt) {
             app_change: {
                 options: {
                     title: 'Javascript',  // optional
-                    message: 'Concatenatated and minifed successfully', //required
+                    message: 'Concatenatated and minifed successfully',
                 }
             },
             css_complete: {
                 options: {
                     title: 'SASS -> CSS',  // optional
-                    message: 'Compiled, prefixed, and moved successfully', //required
+                    message: 'Compiled, prefixed, and moved successfully',
                 }
             },
         },
+        // Optimize all images
+        imageoptim: {
+          main: {
+            options: {
+              jpegMini: false
+            },
+            src: ['www/img/**/']
+          }
+        },
         //- Watchers
         watch: {
-            grunt: { 
+            grunt: {
                 files: ['gruntfile.js'],
-                tasks: ['default'], 
+                tasks: ['default'],
             },
             sass: {
                 files: ['scss/**/*.scss'],
@@ -121,17 +123,13 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['<%= concat.app.src %>', 'js/main.js'],
-                tasks: ['notify:app_change','app_change']                
-            },
-            /*sync: {
-                files: ['', 'templates/img/**'],
-                tasks: ['sync_files']                
-            }*/
+                tasks: ['notify:app_change','app_change']
+            }
         }
     });
     //- REGISTER ALL OUR GRUNT TASKS
     grunt.task.run('notify_hooks');
-    grunt.registerTask('default', ['autoprefixer','cssmin', 'concat','sass', /*'sync',*/ 'uglify', 'watch']);
+    grunt.registerTask('default', ['autoprefixer','cssmin', 'concat','sass', 'imageoptim', 'uglify', 'watch']);
     grunt.registerTask('app_change', ['concat:app', 'uglify:app', 'uglify:main']);
     grunt.registerTask('concat_change', ['uglify:app']);
     grunt.registerTask('sass_change', ['sass']);

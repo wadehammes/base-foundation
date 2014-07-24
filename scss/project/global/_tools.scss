@@ -8,19 +8,3 @@ html * {
 body {
     @include backface-visibility(visible);
 }
-
-// Tools
-////////////////////////////////////////////////////////
-.clearfix::before,
-.clearfix::after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
