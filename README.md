@@ -14,7 +14,7 @@ Then Grunt:
 Then Bower:
 <code>$ npm install -g bower</code>
 
-After that, install some other dependencies:
+After that, install some other dependencies:<br />
 <code>$ sudo gem install -g sass</code><br />
 <code>$ sudo gem install bourbon -v 3.2.0</code>
 
