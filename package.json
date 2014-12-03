@@ -6,18 +6,16 @@
     "type": "git",
     "url": "git@github.com:wadehammes/base-foundation.git"
   },
+  "engines": {
+  	"node": ">=0.10.0"
+  },
 	"devDependencies": {
-		"grunt":                  		 "*",
-		"node-sass":                   "*",
-		"grunt-contrib-uglify":        "*",
-		"grunt-contrib-watch":         "*",
-		"grunt-contrib-concat":        "*",
-		"grunt-sass":                  "*",
-		"grunt-notify":                "*",
-		"grunt-autoprefixer":          "*",
-		"grunt-contrib-cssmin":        "*",
-		"grunt-sync":                  "*",
-		"grunt-imageoptim":            "*",
-		"matchdep":                    "*"
+		"gulp"             : "*",
+		"gulp-sass"        : "*",
+		"gulp-uglify"      : "*",
+		"gulp-concat"      : "*",
+		"gulp-autoprefixer": "*",
+		"gulp-minify-css"  : "*",
+		"gulp-watch"       : "*"
 	}
 }
