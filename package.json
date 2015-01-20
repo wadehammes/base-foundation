@@ -1,21 +1,23 @@
 {
-	"name": "base",
-	"version": "3.0.0",
-	"author": "Wade Hammes",
-	"repository": {
+  "name": "base",
+  "version": "3.0.0",
+  "author": "Wade Hammes",
+  "repository": {
     "type": "git",
     "url": "git@github.com:wadehammes/base-foundation.git"
   },
   "engines": {
-  	"node": ">=0.10.0"
+    "node": ">=0.10.0"
   },
-	"devDependencies": {
-		"gulp"             : "*",
-		"gulp-sass"        : "*",
-		"gulp-uglify"      : "*",
-		"gulp-concat"      : "*",
-		"gulp-autoprefixer": "*",
-		"gulp-minify-css"  : "*",
-		"gulp-watch"       : "*"
-	}
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-imagemin": "^2.0.0",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*"
+  }
 }
