@@ -1,3 +1,3 @@
-            <div id="header" role="main-header">
+<div id="header" role="banner">
 
-            </div><?php // end header ?>
+</div>

@@ -16,28 +16,28 @@
   plumber      = require('gulp-plumber');
 
 /* PATHS */
-var devBase = './assets';
-var themeBase = './www';
+var devBase          = './assets';
+var themeBase        = './www';
 
 // Style Path
-var stylePathSrc = devBase + '/scss/**/*.scss';
-var stylePathDest = themeBase + '/css/';
+var stylePathSrc     = devBase + '/scss/**/*.scss';
+var stylePathDest    = themeBase + '/css/';
 
 // Script Path
-var scriptsPathSrc = [devBase + '/js/_lib/**/*.js', devBase + '/js/_src/**/*.js', devBase + '/js/app.js'];
+var scriptsPathSrc   = [devBase + '/js/_lib/**/*.js', devBase + '/js/_src/**/*.js', devBase + '/js/app.js'];
 var scriptsPathWatch = devBase + '/js/**/*.js';
-var scriptsPathDest = themeBase + '/js/';
+var scriptsPathDest  = themeBase + '/js/';
 
 // Sprites Path
-var svgPathWatch = devBase + '/svg/*.svg';
-var svgDest = themeBase + '/svg';
+var svgPathWatch     = devBase + '/svg/*.svg';
+var svgDest          = themeBase + '/svg';
 
 // Image Path
-var imgPathWatch = devBase + '/img/*';
-var imgDest = themeBase + '/img';
+var imgPathWatch     = devBase + '/img/*';
+var imgDest          = themeBase + '/img';
 
 // PHP Paths
-var phpPath = themeBase + '/**/*.php';
+var phpPath          = themeBase + '/**/*.php';
 
 // Copy all files from Bower we need
 gulp.task('copy', function() {

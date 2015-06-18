@@ -9,9 +9,9 @@
         				<h1>Base Foundation</h1>
         				<p>Go build something awesome.</p>
         			</div>
-        		</div><?php // end row ?>
-        	</div><?php // end main-content ?>
+        		</div>
+        	</div>
 
 <?php include('inc/footer.php'); ?>
 
-		
+
