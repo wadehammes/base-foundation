@@ -3,14 +3,10 @@
 
 <?php include('inc/doctype.php'); ?>
 
-        	<div id="main" role="main-content">
-        		<div class="row">
-        			<div class="small-12 columns">
-        				<h1>Base Foundation</h1>
-        				<p>Go build something awesome.</p>
-        			</div>
-        		</div>
-        	</div>
+	<main id="main" role="application">
+		<h1>Base Foundation</h1>
+		<p>Go build something awesome.</p>
+	</main>
 
 <?php include('inc/footer.php'); ?>
 

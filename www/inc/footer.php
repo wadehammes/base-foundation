@@ -1,6 +1,6 @@
-      <div id="footer" role="contentInfo">
+      <footer id="footer" role="contentInfo">
 
-      </div>
+      </footer>
     </div><!-- end content wrapper-->
 
     <script type="text/javascript" src="js/app.min.js"></script>

@@ -1,3 +1,3 @@
-<div id="header" role="banner">
+<header id="header" role="banner">
 
-</div>
+</header>
