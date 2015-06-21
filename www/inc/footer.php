@@ -3,7 +3,7 @@
       </footer>
     </div><!-- end content wrapper-->
 
-    <script type="text/javascript" src="js/app.min.js"></script>
+    <script defer type="text/javascript" src="js/app.min.js"></script>
   </body>
 </html>
 

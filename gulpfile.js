@@ -1,19 +1,19 @@
 /* DEPENDENCIES */
-  var gulp     = require('gulp'),
-  sass         = require('gulp-sass'),
-  autoprefixer = require('gulp-autoprefixer'),
-  minifyCSS    = require('gulp-minify-css'),
-  concat       = require('gulp-concat'),
-  uglify       = require('gulp-uglify'),
-  rename       = require('gulp-rename'),
-  svgmin       = require('gulp-svgmin'),
-  imagemin     = require('gulp-imagemin'),
-  livereload   = require('gulp-livereload'),
-  notify       = require("gulp-notify"),
-  util         = require('gulp-util'),
-  watch        = require('gulp-watch'),
-  streamqueue  = require('streamqueue'),
-  plumber      = require('gulp-plumber');
+var gulp     = require('gulp'),
+sass         = require('gulp-sass'),
+autoprefixer = require('gulp-autoprefixer'),
+minifyCSS    = require('gulp-minify-css'),
+concat       = require('gulp-concat'),
+uglify       = require('gulp-uglify'),
+rename       = require('gulp-rename'),
+svgmin       = require('gulp-svgmin'),
+imagemin     = require('gulp-imagemin'),
+livereload   = require('gulp-livereload'),
+notify       = require("gulp-notify"),
+util         = require('gulp-util'),
+watch        = require('gulp-watch'),
+streamqueue  = require('streamqueue'),
+plumber      = require('gulp-plumber');
 
 /* PATHS */
 var devBase          = './assets';
@@ -45,7 +45,7 @@ gulp.task('copy', function() {
     /* add bower src files here */
     ])
   .pipe(gulp.dest(devBase + '/js/_lib/'));
-  });
+});
 
 // Compile, prefix, minify and move our SCSS files
 gulp.task('sass', function() {
@@ -55,12 +55,12 @@ gulp.task('sass', function() {
     style: 'expanded',
     errLogToConsole: true
     }))
-  .pipe(autoprefixer('last 2 versions', 'opera 12.1', 'ios 6', 'android 4'))
+  .pipe(autoprefixer('last 4 versions', 'opera 12.1', 'ios 6', 'android 4'))
   .pipe(minifyCSS())
   .pipe(gulp.dest(stylePathDest))
   .pipe(livereload({start: true}))
   .pipe(notify({ message: 'Styles task complete' }));
-  });
+});
 
 // Compile (in order), concatenate, minify, rename and move our JS files
 gulp.task('scripts', function() {
@@ -76,7 +76,7 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(scriptsPathDest))
   .pipe(livereload({start: true}))
   .pipe(notify({ message: 'Scripts task complete' }));
-  });
+});
 
 // Optimize images
 gulp.task('img-opt', function () {
@@ -86,7 +86,7 @@ gulp.task('img-opt', function () {
     }))
   .pipe(gulp.dest(imgDest))
   .pipe(notify({ message: 'Images task complete' }));
-  });
+});
 
 // Optimize our SVGS
 gulp.task('svg-opt', function () {
@@ -106,7 +106,7 @@ gulp.task('svg-opt', function () {
     }))
   .pipe(gulp.dest(svgDest))
   .pipe(notify({ message: 'SVG task complete' }));
-  });
+});
 
 // Watch for any task changes
 gulp.task('watch', function() {
