@@ -1,4 +1,6 @@
-/* DEPENDENCIES */
+/*=====================================
+=            Gulp Packages            =
+=====================================*/
 var gulp     = require('gulp'),
 sass         = require('gulp-sass'),
 autoprefixer = require('gulp-autoprefixer'),
@@ -15,31 +17,35 @@ watch        = require('gulp-watch'),
 streamqueue  = require('streamqueue'),
 plumber      = require('gulp-plumber');
 
-/* PATHS */
+/*=====================================
+=            Default Paths            =
+=====================================*/
 var devBase          = './assets';
 var themeBase        = './www';
 
-// Style Path
+/*=========================================
+=            Destination Paths            =
+=========================================*/
 var stylePathSrc     = devBase + '/scss/**/*.scss';
 var stylePathDest    = themeBase + '/css/';
 
-// Script Path
 var scriptsPathSrc   = [devBase + '/js/_lib/**/*.js', devBase + '/js/_src/**/*.js', devBase + '/js/app.js'];
 var scriptsPathWatch = devBase + '/js/**/*.js';
 var scriptsPathDest  = themeBase + '/js/';
 
-// Sprites Path
 var svgPathWatch     = devBase + '/svg/*.svg';
 var svgDest          = themeBase + '/svg';
 
-// Image Path
 var imgPathWatch     = devBase + '/img/*';
 var imgDest          = themeBase + '/img';
 
-// PHP Paths
 var phpPath          = themeBase + '/**/*.php';
 
-// Copy all files from Bower we need
+/*=============================
+=            Tasks            =
+=============================*/
+
+// Copy bower files into our assets
 gulp.task('copy', function() {
   gulp.src([
     /* add bower src files here */
@@ -123,7 +129,9 @@ gulp.task('watch', function() {
   gulp.watch(imgPathWatch, ['img-opt']);
 });
 
-/* RUN */
+/*==========================================
+=            Run the Gulp Tasks            =
+==========================================*/
 gulp.task('default', ['copy', 'sass', 'scripts', 'watch']);
 gulp.task('images', ['img-opt']);
 gulp.task('svg', ['svg-opt']);
