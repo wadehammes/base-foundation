@@ -20,6 +20,16 @@
     <![endif]-->
 
     <!-- SCRIPT -->
+    <script type="text/javascript">
+      /*=============================================
+      =            Detect Smart Browsers            =
+      =============================================*/
+      if ('visibilityState' in document) {
+        var doc = document.getElementsByTagName("html");
+        doc[0].className = 'modern-browser';
+      }
+    </script>
+
     <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 
