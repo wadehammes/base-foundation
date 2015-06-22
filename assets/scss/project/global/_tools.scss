@@ -8,3 +8,7 @@ html * {
 body {
     @include backface-visibility(visible);
 }
+
+.full {
+  width: 100%;
+}

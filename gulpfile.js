@@ -15,7 +15,12 @@ notify       = require("gulp-notify"),
 util         = require('gulp-util'),
 watch        = require('gulp-watch'),
 streamqueue  = require('streamqueue'),
-plumber      = require('gulp-plumber');
+plumber      = require('gulp-plumber'),
+shell        = require('gulp-shell'),
+webserver    = require('gulp-webserver'),
+jshint       = require('gulp-jshint'),
+gzip         = require('gulp-gzip'),
+opn          = require('opn');
 
 /*=====================================
 =            Default Paths            =
@@ -40,11 +45,28 @@ var imgPathWatch     = devBase + '/img/*';
 var imgDest          = themeBase + '/img';
 
 var phpPath          = themeBase + '/**/*.php';
+var htmlPath         = themeBase + '/**/*.html';
+
+/*===============================
+=            Options            =
+===============================*/
+// Server
+var server = {
+    host: 'localhost',
+    port: '8001'
+}
+
+// GZIP
+var gzip_options = {
+    threshold: '1kb',
+    gzipOptions: {
+        level: 9
+    }
+};
 
 /*=============================
 =            Tasks            =
 =============================*/
-
 // Copy bower files into our assets
 gulp.task('copy', function() {
   gulp.src([
@@ -63,6 +85,9 @@ gulp.task('sass', function() {
     }))
   .pipe(autoprefixer('last 4 versions', 'opera 12.1', 'ios 6', 'android 4'))
   .pipe(minifyCSS())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest(stylePathDest))
+  .pipe(gzip(gzip_options))
   .pipe(gulp.dest(stylePathDest))
   .pipe(livereload({start: true}))
   .pipe(notify({ message: 'Styles task complete' }));
@@ -76,14 +101,35 @@ gulp.task('scripts', function() {
     gulp.src(devBase + '/js/app.js')
     )
   .pipe(plumber())
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'))
   .pipe(concat('app.js', {newLine: ';'}))
   .pipe(uglify())
-  .pipe(rename('app.min.js'))
+  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest(scriptsPathDest))
   .pipe(livereload({start: true}))
   .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Launch Server
+gulp.task('webserver', function() {
+  gulp.src(themeBase)
+    .pipe(webserver({
+      host:             server.host,
+      port:             server.port,
+      livereload:       true,
+      directoryListing: false
+  }));
+});
+
+// Open Browser Tab
+gulp.task('openbrowser', function() {
+    opn( 'http://' + server.host + ':' + server.port );
+});
+
+/*========================================
+=            Standalone Tasks            =
+========================================*/
 // Optimize images
 gulp.task('img-opt', function () {
   return gulp.src(imgPathWatch)
@@ -114,14 +160,21 @@ gulp.task('svg-opt', function () {
   .pipe(notify({ message: 'SVG task complete' }));
 });
 
-// Watch for any task changes
+/*===================================
+=            Watch Tasks            =
+===================================*/
 gulp.task('watch', function() {
   livereload.listen();
 
   gulp.watch(phpPath).on('change', function(file) {
     livereload.changed(file.path);
-    util.log(util.colors.blue('PHP file changed' + ' (' + file.path + ')'));
-    });
+    util.log(util.colors.blue('PHP file changed:' + ' (' + file.path + ')'));
+  });
+
+  gulp.watch(htmlPath).on('change', function(file) {
+    livereload.changed(file.path);
+    util.log(util.colors.red('HTML file changed:' + ' (' + file.path + ')'));
+  });
 
   gulp.watch(stylePathSrc, ['sass']);
   gulp.watch(scriptsPathWatch, ['scripts']);
@@ -132,6 +185,6 @@ gulp.task('watch', function() {
 /*==========================================
 =            Run the Gulp Tasks            =
 ==========================================*/
-gulp.task('default', ['copy', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['copy', 'sass', 'scripts', 'webserver', 'openbrowser', 'watch']);
 gulp.task('images', ['img-opt']);
 gulp.task('svg', ['svg-opt']);
