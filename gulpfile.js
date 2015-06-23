@@ -20,14 +20,14 @@ plumber      = require('gulp-plumber');
 /*=====================================
 =            Default Paths            =
 =====================================*/
-var devBase          = './assets';
-var themeBase        = './www';
+var devBase   = './assets';
+var themeBase = './www';
 
 /*=========================================
 =            Destination Paths            =
 =========================================*/
-var stylePathSrc     = devBase + '/scss/**/*.scss';
-var stylePathDest    = themeBase + '/css/';
+var stylePathSrc  = devBase + '/scss/**/*.scss';
+var stylePathDest = themeBase + '/css/';
 
 var scriptsPathSrc   = [devBase + '/js/_lib/**/*.js', devBase + '/js/_src/**/*.js', devBase + '/js/app.js'];
 var scriptsPathWatch = devBase + '/js/**/*.js';
