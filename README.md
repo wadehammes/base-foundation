@@ -81,8 +81,3 @@ Using this to build
 ===
 
 All theme dev is done in the assets/ directory. You will need to create the SVG and IMG directories (svg/ and img/ respectively).
-
-##### Download MAMP
-<a href="https://www.mamp.info/en/">https://www.mamp.info/en/</a>
-
-Once installed, point your MAMP's Server to your project directory's <b>www</b> directory, and then visit http://localhost:8888/ in your favorite browser. Enjoy building!
