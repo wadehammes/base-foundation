@@ -9,14 +9,14 @@
 		self.el = $(this);
 		self.el.data(__name, self); // store the plugin instance into the element
 		//-- ------------------------------------------------------
-		
-		
+
+
 		//-- init
 		//-- ------------------------------------------------------
 		self.defaults = {
-			
+
 		};
-		
+
 		self.initialize = function() {
 			// merging defaults with passed arguments
 			self.options = $.extend({}, self.defaults, options);
@@ -24,16 +24,16 @@
 			ignite();
 			return self;
 		};
-		
+
 		//-- Vars
 		//-- ------------------------------------------------------
-		
+
 
 		//-- Start
 		//-- ------------------------------------------------------
 
 		function ignite() {
-			
+
 			bindEvents();
 		}
 
@@ -44,6 +44,6 @@
 
 		//-
 		return self.initialize();
-	}
+	};
 } catch(e) { err(e);}
 })();
