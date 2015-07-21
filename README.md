@@ -56,7 +56,7 @@ $ gulp images
 
 ##### In order to update packages:
 ```
-$ npm run_script update
+$ npm run-script update
 ```
 
 #### To fix breaking npm builds

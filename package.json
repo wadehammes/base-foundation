@@ -10,8 +10,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "postinstall": "bower install && bourbon install && bourbon update",
-    "update": "bourbon update && bower update && npm update"
+    "postinstall": "bower install",
+    "update": "bower update && npm update"
   },
   "devDependencies": {
     "gulp"             : "^3.8.11",
